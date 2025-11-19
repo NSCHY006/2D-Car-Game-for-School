@@ -37,7 +37,7 @@ DIFF = {
     'Nightmare': {'min': 9.0,  'max': 13.0, 'spawn_ms': 550,  'scroll': 8}
 }
 
-def load_image(name, w=None, h=None, *args):
+def load_image(name, w=None, h=None):
     path = os.path.join(ASSETS, name)
     print("Loading:", path)  # debug
 
@@ -68,11 +68,11 @@ def run_game(username, user_id, selected_car, difficulty):
     clock = pg.time.Clock()
 
     # load assets
-    road = load_image("", "road.png", SCREEN_W, SCREEN_H//3)   # if assets/road.png exists
-    grass = load_image("grass", "grass.png", SCREEN_W//6, SCREEN_H//3)
-    player1 = load_image("player1", "player1.png", PLAYER_W, PLAYER_H)
-    player2 = load_image("player2", "player2.png", PLAYER_W, PLAYER_H)
-    enemy_img = load_image("enemy", "enemy.png", ENEMY_W, ENEMY_H)
+    road = load_image("road.png", SCREEN_W, SCREEN_H//3)   # if assets/road.png exists
+    grass = load_image("grass.png", SCREEN_W//6, SCREEN_H//3)
+    player1 = load_image("player1.png", PLAYER_W, PLAYER_H)
+    player2 = load_image("player2.png", PLAYER_W, PLAYER_H)
+    enemy_img = load_image("enemy.png", ENEMY_W, ENEMY_H)
 
 # correct car selection logic
     player_img = player1 if selected_car == "player1" else player2
